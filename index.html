@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>World Country Lookup</title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script src="js/index.js"></script>
+<script src="js/checkboxes.js"></script>
+</head>
+
+<body>
+    
+    <h1 style="text-align:center;">Please select which fields you want to be in your results :</h1>
+    <div class="grid-container">
+        <label for="population"><input type="checkbox" id="population" checked><span class="check"><label class="check" for="population">Population</label></label>
+
+        <label for="capital"> <input type="checkbox" id="capital" checked><span class="check">Capital</span></label>
+
+        <label for="demonym"> <input type="checkbox" id="demonym" checked><span class="check">Demonym</span></label>
+
+        <label for="languages">  <input type="checkbox" id="languages" checked><span class="check">Languages</span></label>
+
+        <label for="currencies"> <input type="checkbox" id="currencies" checked><span class="check">Currencies</span></label>
+
+        <label for="borders"> <input type="checkbox" id="borders" checked><span class="check">Bordering Countries</span></label>
+        
+        <label for="flag"><input type="checkbox" id="flag" checked><span class="check">Flag</span></label>
+
+        <label for="latlng"> <input type="checkbox" id="latlng" unchecked><span class="check">Latitude/Longitude</span></label>
+
+        <label for='area'> <input type="checkbox" id="area" unchecked><span class="check">Square Area</span></label>
+
+        <label for="region"> <input type="checkbox" id="region" unchecked><span class="check">Region</span></label>
+
+        <label for="regionalBlocs"> <input type="checkbox" id="regionalBlocs" unchecked><span class="check">Regional Blocks</span></label>
+
+        <label for="gini"> <input type="checkbox" id="gini" unchecked><span class="check">Gini</span></label>   
+                     
+        <label for="numericCode"> <input type="checkbox" id="numericCode" unchecked><span class="check">Numeric Code</span></label>
+
+        <label for="topLevelDomain"><input type="checkbox" id="topLevelDomain" unchecked><span class="check">top Level Domain</span></label>
+
+                                      
+    </div>
+    <span class="red">Unchecking flag decreases loading times</span> 
+
+    <br>
+
+    <div class="get-by">    
+        <button onclick="getAllCountries()" class="optionButton" id="allCountries" >Get ALL countries</button>
+        <span>Returns a list with ALL the countries of the world, loading this may be longer when compraed to the other queries.</span>
+    </div>
+    
+    <h2 class="red">Type your search parameter and then press ENTER in order for the search to take place</h2>
+    
+    <div class="grid-container">
+        <form onsubmit="getByName()">
+            <input type="text" name="name" id="by_name_argument" class="input_field" placeholder="Country Name">
+            <span>Search a country only by it's name,you can input the whole name, or part of it.</span>
+        </form>
+
+        <form onsubmit="getByCode()">
+            <input type="text" name="name" id="by_code_argument" class="input_field" placeholder="3 letter country code">
+            <span>Search a country by it's 3 letter unique code. </span>
+        </form>
+
+        <form onsubmit="getByCurrency()">
+            <input type="text" name="name" id="by_currency_argument" class="input_field" placeholder="Currency (3 letter code)">
+            <span>Search countries by their currency, most queries return MANY countries.Note that we use the <u>ISO 4217</u> currency code.</span>
+            <span class="example">For more info please visit <a href="https://www2.1010data.com/documentationcenter/prime/1010dataUsersGuide/DataTypesAndFormats/currencyUnitCodes.html" target="_blank">THIS</a> link</span>
+        </form>
+
+        <form onsubmit="getByLanguage()">
+            <input type="text" name="name" id="by_language_argument" class="input_field" placeholder="Language (2 letter code)">
+            <span>Search countries by the languages they speak.Many countries may be returned.Note that we use the <u>ISO 639-1</u> language code.</span>
+            <span class="example">For more info please visit <a href="https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html#wp1252447" target="_blank">THIS</a> link</span>
+        </form>
+
+        <form onsubmit="getByCapital()">
+            <input type="text" name="name" id="by_capital_argument" class="input_field" placeholder="Capital">   
+            <span>Search a country by it's capital.</span>
+        </form>
+
+        <form onsubmit="getByRegion()">
+            <input type="text" name="name" id="by_region_argument" class="input_field" placeholder="Region">
+            <span>Search a country by it's Region.Many countries will be returned.</span>
+            <span class="example">Region options : <u>Africa, Americas, Asia, Europe, Oceania</u></span>
+        </form>
+
+        <form onsubmit="getByCallcode()">
+            <input type="text" name="name" id="by_callcode_argument" class="input_field" placeholder="Call code (without the +)">
+            <span>Search a country by it's phone number calling code.</span>
+        </form>
+
+        <form onsubmit="getByRegionalBlock()">
+                <input type="text" name="name" id="by_regblock_argument" class="input_field" placeholder="Regional Block">
+            <span>Search a country by it's regional block</span>
+            <span class="example">For more info please visit <a href="html/isos.html" target="_blank">THIS</a> link</span>
+        </form>
+    </div>
+
+    <footer>Implemented by using <a href="https://restcountries.eu/">REST Countries API</a>
+        <br><a href="https://github.com/chrisgs-96">My Github</a>
+    </footer>
+</body>
+
+</html>

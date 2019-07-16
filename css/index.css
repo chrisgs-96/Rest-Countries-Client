@@ -1,0 +1,84 @@
+body{background-color:azure;}
+
+.optionButton{
+    text-align:center;
+    margin:auto;
+    display:block;
+    width:600px;
+    font-size:20px;
+    font-weight:bold;
+    background-color:dodgerblue;
+    border-radius: 5px;
+    border:3px solid blue;
+    margin-top:16px;
+}
+
+span{
+    font-size:14px;
+    color:rgb(3, 3, 126);
+    font-weight:bold;
+    display:block;
+}
+
+.example{
+    font-size:14px;
+    color:black;
+    opacity:0.7;
+    font-weight:bold;
+    display:block;
+}
+
+.input_field{
+    text-align:center;
+    display:inline-block;
+    color:darkblue;
+    opacity:0.7;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:8px;
+    height:30px;
+    width:326px;
+    border:1px solid black;
+}
+
+
+.get-by{
+    margin:auto;
+    margin-top:16px;
+    text-align:center;
+}
+
+.check{
+    font-size:20px;
+    display:inline;
+}
+
+
+
+.red{color:red;font-size:18px;margin:auto;text-align:center;font-weight:bold;}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-gap: 1px;
+    background-color: #2196F3;
+    width:1000px;
+    margin:auto;
+    margin-top:16px;
+}
+
+.grid-container>form{text-align:center;border:1px solid black;padding-top:16px;padding-bottom:8px;}
+.grid-container>div{text-align:left;}
+
+form{width:497px;}
+form:hover{background-color:#1f7ede;}
+.grid-container>label{border:1px solid black;}
+.grid-container>label:hover{background-color:#1f7ede;}
+
+footer{margin-top:32px;font-size:12px;}
+/*Making the site more responsive in case it's browsed by a phone*/
+@media only screen and (max-width: 986px) {
+    .grid-container{grid-template-columns:auto;width:452px;}
+    .optionButton{width:450px;}
+    form{width:450px;}
+}
